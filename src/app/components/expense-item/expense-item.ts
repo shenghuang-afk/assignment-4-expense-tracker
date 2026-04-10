@@ -1,10 +1,12 @@
 import { Component, Input, inject } from '@angular/core';
 import { Expense } from '../../models/expense';
 import { ExpenseService } from '../../services/expense-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-expense-item',
     standalone: true,
+    imports: [RouterLink],
     templateUrl: './expense-item.html'
 })
 export class ExpenseItemComponent {

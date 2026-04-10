@@ -57,4 +57,15 @@ export class ExpenseService {
         current.filter(expense => expense.id !== id)
         );
     }
+    
+    editExpense(updatedExpense: Expense): void {
+    this.expenses.update(current => current.map(expense =>
+            expense.id === updatedExpense.id ? updatedExpense : expense
+        )
+        );
+      }
+      
+    getExpenseById(id: string): Expense | undefined {
+        return this.expenses().find(expense => expense.id === id);
+    }
 }
