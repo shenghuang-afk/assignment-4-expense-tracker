@@ -1,0 +1,15 @@
+<div class="container mt-4">
+    <h2 class="mb-4">View Expenses</h2>
+  
+    @if (expenseService.expenses().length === 0) {
+      <p>No expenses found.</p>
+    } @else {
+      <div class="row g-3">
+        @for (expense of expenseService.expenses(); track expense.id) {
+            <div class="col-md-6">
+                <app-expense-item [expense]="expense"></app-expense-item>
+            </div>
+        }
+      </div>
+    }
+</div>
